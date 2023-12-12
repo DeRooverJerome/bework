@@ -1,0 +1,38 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 40px 0;
+  text-align: center;
+}
+form {
+  margin: 0 auto;
+
+  & > h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+  label {
+    margin-right: auto;
+  }
+  input {
+    width: 240px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 8px;
+    margin-bottom: 15px;
+  }
+}
+
+.submit_btn {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto 40px auto;
+  background-color: darkgoldenrod;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

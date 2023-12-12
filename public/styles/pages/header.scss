@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+
+  h1 > a {
+    text-decoration: none;
+    color: black;
+  }
+}
+.nav {
+  display: flex;
+  list-style: none;
+
+  gap: 10px;
+}
+.btn {
+  display: block;
+  width: 140px;
+  height: 30px;
+  border-radius: 75px;
+  text-decoration: none;
+  color: black;
+  line-height: 28px;
+  background-color: antiquewhite;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dashboard</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+
+<body>
+  <nav class="container header">
+    <h1><a href="/">LOGO</a></h1>
+
+    <ul class="nav">
+      <% if(user) { %>
+        <li>Welcome, <%= user.firstname %>
+        </li>
+        <li><a href="/profil" class="profil">My Profil</a></li>
+        <li><a href="/logout" class="btn">Log out</a></li>
+        <% } else { %>
+          <li><a href="/login" class="btn">log in</a></li>
+          <li><a href="/signup" class="btn">Sign up</a></li>
+          <% } %>
+    </ul>
+  </nav>
+</body>
+
+</html>

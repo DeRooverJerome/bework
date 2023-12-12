@@ -1,0 +1,30 @@
+<a href="/createJob" class="createJob_btn">Create a job</a>
+
+<form class="filter_form" method="GET" action="/dashboard">
+    <label for="filter">Filter by:</label>
+    <select id="filter" name="filter">
+        <option value="status">Status</option>
+        <option value="date">Date</option>
+    </select>
+
+    <label for="order">Order:</label>
+    <select id="order" name="order">
+        <option value="asc.">Asc.</option>
+        <option value="desc.">Desc.</option>
+    </select>
+</form>
+
+<ul>
+    <li>List of jobs</li>
+</ul>
+</div>
+
+<script>
+document.getElementById('filter').addEventListener('change', () => {
+    document.querySelector('.filter_form')
+});
+
+document.getElementById('order').addEventListener('change', () => {
+    document.querySelector('.filter_form')
+});
+</script>

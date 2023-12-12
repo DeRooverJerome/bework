@@ -1,0 +1,34 @@
+<%- include('partials/header'); -%>
+  <h1 class="dashboard">Dashboard</h1>
+  <section class="container">
+    <%if(user){ %> <%- include('dashboard') %>
+        <ul>
+          <% notes.forEach(note=> { %>
+            <li>
+              <div class="jobCard">
+                <h5>
+                  <%= note.status %>
+                </h5>
+                <h2>
+                  <%= note.jobTitle %>
+                </h2>
+                <h3>
+                  <%= note.company %>
+                </h3>
+                <p>
+                  <% let date=new Date(note.createdAt); %>
+                    <%= date.toLocaleDateString('fr-FR', { day: '2-digit' , month: '2-digit' , year: '2-digit' }) %>
+                </p>
+                <a href="/renderJob/<%= note.id %>">See more</a>
+            </li>
+            </div>
+            <% }) %>
+        </ul>
+        <% } else{ %>
+          <h3>Here you will see your jobs...</h3>
+          <br />
+          <a href="/login" class="btn">log in</a>
+          <a href="/signup" class="btn">Sign up</a>
+          <% } %>
+  </section>
+  <%- include('partials/footer'); -%>

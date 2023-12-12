@@ -1,0 +1,53 @@
+<%- include('partials/header'); -%>
+    <a href="/">Home</a>
+    <h1>Update Job</h1>
+
+    <form action="/updateJob/<%= note._id %>?_method=PUT" method="POST">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" name="jobTitle" required value="<%= note.jobTitle %>">
+        <div class="jobTitle error"></div>
+        <label for="company">Company</label>
+        <input type="text" name="company" required value="<%= note.company %>">
+        <div class="company error"></div>
+        <label for="website">Website</label>
+        <input type="text" name="website" required value="<%= note.website %>" />
+        <div class="website error"></div>
+        <br />
+        <h4>Employer's contact</h4>
+        <br />
+
+        <label for="employerName">Name</label>
+        <input type="text" name="employerName" required value="<%= note.employerName %>" />
+        <div class="employerName error"></div>
+
+        <label for="employerEmail">Email of contact</label>
+        <input type="text" name="employerEmail" required value="<%= note.employerEmail %>" />
+        <div class="email error"></div>
+
+        <label for="employerPhone">Phone</label>
+        <input type="text" name="employerPhone" required value="<%= note.employerPhone %>" />
+        <div class="phone error"></div>
+
+        <label for="employerAddress">Address</label>
+        <input type="text" name="employerAddress" required value="<%= note.employerAddress %>" />
+        <div class="address error"></div>
+
+        <label for="origin">Origin:</label>
+        <select id="origin" name="origin">
+            <option value="Spontaneous application">Spontaneous application</option>
+            <option value="Job offer">Job offer.</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+            <option value="Interested">Interested</option>
+            <option value="CV sent">CV sent</option>
+            <option value="Negative">Negative</option>
+            <option value="Interview">Interview</option>
+        </select>
+        <br />
+        <label for="comments">Comments</label>
+        <input type="text" name="comments" required value="<%= note.comments %>" />
+        <div class="comments error"></div>
+        <button type="submit">Save</button>
+    </form>

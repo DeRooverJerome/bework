@@ -1,0 +1,106 @@
+<%- include('partials/header'); -%>
+
+<div class="form_container">
+  <form class="signup container">
+    <h2>Sign up</h2>
+    <label for="firstname">Firstname</label>
+    <input type="text" name="firstname" required />
+    <div class="firstname error"></div>
+    <label for="lastname">Lastname</label>
+    <input type="text" name="lastname" required />
+    <div class="lastname error"></div>
+    <label for="email">Email</label><br />
+    <input type="text" name="email" required />
+    <div class="email error"></div>
+    <label for="github">Github</label>
+    <input type="text" name="github" />
+    <div class="github error"></div>
+    <label for="profilePicture">Profile picture</label>
+    <input type="text" name="profilePicture" />
+    <div class="profilePicture error"></div>
+    <label for="pdfFile">PDF file</label>
+    <input type="text" name="pdfFile" />
+    <div class="pdfFile error"></div>
+    <label for="password">Password</label><br />
+    <input type="password" name="password" required />
+    <div class="password error"></div>
+    <label for="passwordConfirm">Repeat password</label>
+    <input type="password" name="passwordConfirm" required />
+    <div class="confirmPassword error"></div>
+    <button class="submit_btn">Sign up</button>
+    <p>Already registerd? <a href="/login">Login</a></p>
+  </form>
+</div>
+
+<!-- /////////////////////////////// -->
+<script>
+  const form = document.querySelector(".signup");
+  const emailError = document.querySelector(".email.error");
+  const passwordError = document.querySelector(".password.error");
+  const firstnameError = document.querySelector(".firstname.error");
+  const lastnameError = document.querySelector(".lastname.error");
+  const githubError = document.querySelector(".github.error");
+  const profilePictureError = document.querySelector(".profilePicture.error");
+  const pdfFileError = document.querySelector(".pdfFile.error");
+  const confirmPasswordError = document.querySelector(".confirmPassword.error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    //get values
+    const password = form.password.value;
+    const email = form.email.value;
+    const firstname = form.firstname.value;
+    const lastname = form.lastname.value;
+    const github = form.github.value;
+    const profilePicture = form.profilePicture.value;
+    const pdfFile = form.pdfFile.value;
+    const passwordConfirm = form.passwordConfirm.value;
+
+    //reset err
+
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    firstnameError.textContent = "";
+    lastnameError.textContent = "";
+    githubError.textContent = "";
+    profilePictureError.textContent = "";
+    pdfFileError.textContent = "";
+    confirmPasswordError.textContent = "";
+
+    try {
+      const res = await fetch("./signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          password,
+          email,
+          github,
+          profilePicture,
+          pdfFile,
+          passwordConfirm,
+        }),
+      });
+      const data = await res.json();
+      if (data.errors) {
+        emailError.textContent = data.errors.email;
+        passwordError.textContent = data.errors.password;
+        firstnameError.textContent = data.errors.firstname;
+        lastnameError.textContent = data.errors.lastname;
+        githubError.textContent = data.errors.github;
+        profilePictureError.textContent = data.errors.profilePicture;
+        pdfFileError.textContent = data.errors.pdfFile;
+        confirmPasswordError.textContent = data.errors.passwordConfirm;
+      }
+      if (data.user) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
+
+<%- include('partials/footer'); -%>

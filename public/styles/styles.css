@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.header h1 > a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.btn {
+  display: block;
+  width: 140px;
+  height: 30px;
+  border-radius: 75px;
+  text-decoration: none;
+  color: black;
+  line-height: 28px;
+  background-color: antiquewhite;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 40px 0;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+}
+form > h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+form label {
+  margin-right: auto;
+}
+form input {
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 8px;
+  margin-bottom: 15px;
+}
+
+.submit_btn {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto 40px auto;
+  background-color: darkgoldenrod;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.submit_btn:hover {
+  cursor: pointer;
+}
+
+.dashboard {
+  width: 100%;
+  text-align: center;
+}
+
+.container_home {
+  display: flex;
+  flex-direction: column;
+}
+.container_home > h3 {
+  margin: 40px auto 40px auto;
+  font-size: 30px;
+  color: rgba(38, 38, 38, 0.829);
+}
+.container_home_btn {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+
+.home_btn {
+  width: 250px;
+  height: 45px;
+  line-height: 44px;
+  font-size: 18px;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.profile_container {
+  display: flex;
+  flex-direction: column;
+}
+.profile > img {
+  width: 250px;
+  grid-row: 1/5;
+}
+
+.back_dashboard {
+  margin: 30px 30px;
+  text-decoration: none;
+}
+.back_dashboard:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.back_dashboard a {
+  text-decoration: none;
+}
+
+form.profile_upload input {
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard_container {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.createJob_btn {
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+form.filter_form {
+  margin: 0;
+  margin-bottom: 20pxs;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,33 @@
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & > img {
+    width: 250px;
+    grid-row: 1/5;
+  }
+}
+.back_dashboard {
+  margin: 30px 30px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  & a {
+    text-decoration: none;
+  }
+}
+
+form.profile_upload input {
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+
+<div class="container profile_container">
+  <div class="home">
+    <p class="back_dashboard"><span>&#60;</span><a href="/"> Dashboard</a></p>
+  </div>
+
+  <div class="profile">
+    <img src="<%= user.profilePicture %>" alt="profilePicture" />
+    <h2>Full name: <%= user.firstName %> <%= user.lastName %></h2>
+    <h2>Email: <%= user.email %></h2>
+    <h2>GitHub: <a href="<%= user.gitHub %>"><%= user.github %></a></h2>
+    <div class="profile_btn">
+      <button>Download CV</button>
+      <form
+        action="/signup"
+        enctype="multipart/form-data"
+        class="profile_upload"
+      >
+        <input type="file" required name="pdfFile" accept=".pdf" />
+      </form>
+      <button>Change password</button>
+    </div>
+  </div>
+</div>
